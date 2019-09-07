@@ -1,0 +1,11 @@
+<div class="col-md-6">
+    <img src="{{ user.photoUrl }}" />
+    <div>
+      <h4>{{ user.name }}</h4>
+      <p>{{ user.email }}</p>
+    </div>
+  </div>
+  <button class="btn btn-info" (click)="signOut()">
+    <i class="fa fa-sign-out"></i>
+    Cerrar sesion
+  </button>
