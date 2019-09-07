@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+//import { Observable } from "rxjs/Rx"
+import { Injectable } from "@angular/core"
+import { HttpClient } from "@angular/common/http"
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  configUrl = "https://reqres.in/api/users?page=2";
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
-
+  getConfig() {
+    let data = this.http.get(this.configUrl)
+    debugger
+    console.log(data)
+    return data;
+  }
 }
